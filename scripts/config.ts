@@ -20,7 +20,7 @@ export function setConfig(path: string, val: string) {
    var ref = config;
    while (splitPath.length > 1) {
       let key = splitPath.pop();
-      if (!key) return;
+      if (!key) break;
       ref = ref[key] ?? {};
    }
 

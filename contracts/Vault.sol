@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol"; /*revert when transaction failed */
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControlEnumerable.sol"; /*  */
 
-contract Valut is Ownable, AccessControlEnumerable {
+contract Vault is Ownable, AccessControlEnumerable {
     IERC20 private token;
     uint256 public maxWithdrawAmount;
     bool public withdrawEnable;
     bytes32 public constant WITHDRAWER_ROLE = keccak256("WITHDRAWER_ROLE");
 
-    function setWithdrarwEnable(bool _isEnabel) public onlyOwner {
+    function setWithdrawEnable(bool _isEnabel) public onlyOwner {
         withdrawEnable = _isEnabel;
     }
 
@@ -30,7 +30,7 @@ contract Valut is Ownable, AccessControlEnumerable {
 
     function withdraw(uint256 _amount, address _to) external onlyWithdrawer {
         require(withdrawEnable, "Withdraw is not available");
-        require(_amount <= maxWithdrawAmount, "Exceed maxium amount");
+        require(_amount <= maxWithdrawAmount, "Exceed maximum amount");
         token.transfer(_to, _amount);
     }
 
