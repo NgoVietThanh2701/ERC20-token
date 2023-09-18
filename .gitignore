@@ -3,3 +3,4 @@ typechain-types
 .env
 artifacts
 cache
+/server/node_modules
