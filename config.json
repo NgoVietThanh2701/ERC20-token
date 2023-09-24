@@ -1,8 +1,10 @@
 {
-   "dev": {},
-   "bsctest": {
-      "Floppy": "0x40928675ee466e1E4CD77b7710965cB3C1BAb446",
-      "Vault": "0x3c7c6B03CA0D51EC9FBe76fBf5cb60B2387FD87E"
-   },
-   "main": {}
+  "dev": {},
+  "bsctest": {
+    "Floppy": "0x40928675ee466e1E4CD77b7710965cB3C1BAb446",
+    "Vault": "0x3c7c6B03CA0D51EC9FBe76fBf5cb60B2387FD87E",
+    "USDT": "0x09a30803513b58461A3BaC7d2e82f4D99178aadA",
+    "Ico": "0xAa9A33BD9F49D06B7Ef3E800a0bF6317705282f8"
+  },
+  "main": {}
 }
